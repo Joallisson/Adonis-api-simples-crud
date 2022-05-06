@@ -8,10 +8,10 @@ export default class CommentsController {
   public async store({params, request, response}: HttpContextContract){
 
     const body = request.body()
-    const momentId = params.momentId
+    const moment_id = params.moment_id
 
-    await Moment.findOrFail(momentId)
-    body.momentId = momentId
+    await Moment.findOrFail(moment_id)
+    body.moment_id = moment_id
 
     const comment = await Comment.create(body)
 

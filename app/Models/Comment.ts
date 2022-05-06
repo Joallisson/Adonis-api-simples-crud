@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Comment extends BaseModel {
   @column({ isPrimary: true })
@@ -12,7 +12,7 @@ export default class Comment extends BaseModel {
   public text: string
 
   @column()
-  public momentId: number
+  public moment_id: number
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
